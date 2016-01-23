@@ -14,6 +14,14 @@
 		2C724D5D1C53E7EB00A53EAF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C724D5B1C53E7EB00A53EAF /* LaunchScreen.storyboard */; };
 		2C724D681C53E7EB00A53EAF /* FirebaseJokesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C724D671C53E7EB00A53EAF /* FirebaseJokesTests.swift */; };
 		2C724D731C53E7EB00A53EAF /* FirebaseJokesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C724D721C53E7EB00A53EAF /* FirebaseJokesUITests.swift */; };
+		2C724D861C53E87E00A53EAF /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C724D851C53E87E00A53EAF /* Constants.swift */; };
+		2C724D881C53E8B500A53EAF /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C724D871C53E8B500A53EAF /* DataService.swift */; };
+		2C724D8A1C53E8D900A53EAF /* Joke.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C724D891C53E8D900A53EAF /* Joke.swift */; };
+		2C724D8C1C53E90300A53EAF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C724D8B1C53E90300A53EAF /* LoginViewController.swift */; };
+		2C724D8E1C53E92000A53EAF /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C724D8D1C53E92000A53EAF /* CreateAccountViewController.swift */; };
+		2C724D901C53E93B00A53EAF /* JokesFeedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C724D8F1C53E93B00A53EAF /* JokesFeedTableViewController.swift */; };
+		2C724D921C53E95600A53EAF /* AddJokeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C724D911C53E95600A53EAF /* AddJokeViewController.swift */; };
+		2C724D941C53E97800A53EAF /* JokeCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C724D931C53E97800A53EAF /* JokeCellTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +55,14 @@
 		2C724D6E1C53E7EB00A53EAF /* FirebaseJokesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FirebaseJokesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C724D721C53E7EB00A53EAF /* FirebaseJokesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseJokesUITests.swift; sourceTree = "<group>"; };
 		2C724D741C53E7EB00A53EAF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2C724D851C53E87E00A53EAF /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		2C724D871C53E8B500A53EAF /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
+		2C724D891C53E8D900A53EAF /* Joke.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Joke.swift; sourceTree = "<group>"; };
+		2C724D8B1C53E90300A53EAF /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		2C724D8D1C53E92000A53EAF /* CreateAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
+		2C724D8F1C53E93B00A53EAF /* JokesFeedTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JokesFeedTableViewController.swift; sourceTree = "<group>"; };
+		2C724D911C53E95600A53EAF /* AddJokeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddJokeViewController.swift; sourceTree = "<group>"; };
+		2C724D931C53E97800A53EAF /* JokeCellTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JokeCellTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +113,11 @@
 		2C724D511C53E7EB00A53EAF /* FirebaseJokes */ = {
 			isa = PBXGroup;
 			children = (
+				2C724D801C53E82000A53EAF /* Utility */,
+				2C724D811C53E82900A53EAF /* Service */,
+				2C724D821C53E83400A53EAF /* Model */,
+				2C724D831C53E83C00A53EAF /* Controller */,
+				2C724D841C53E84A00A53EAF /* View */,
 				2C724D521C53E7EB00A53EAF /* AppDelegate.swift */,
 				2C724D541C53E7EB00A53EAF /* ViewController.swift */,
 				2C724D561C53E7EB00A53EAF /* Main.storyboard */,
@@ -123,6 +144,49 @@
 				2C724D741C53E7EB00A53EAF /* Info.plist */,
 			);
 			path = FirebaseJokesUITests;
+			sourceTree = "<group>";
+		};
+		2C724D801C53E82000A53EAF /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				2C724D851C53E87E00A53EAF /* Constants.swift */,
+			);
+			name = Utility;
+			sourceTree = "<group>";
+		};
+		2C724D811C53E82900A53EAF /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				2C724D871C53E8B500A53EAF /* DataService.swift */,
+			);
+			name = Service;
+			sourceTree = "<group>";
+		};
+		2C724D821C53E83400A53EAF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2C724D891C53E8D900A53EAF /* Joke.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		2C724D831C53E83C00A53EAF /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				2C724D8B1C53E90300A53EAF /* LoginViewController.swift */,
+				2C724D8D1C53E92000A53EAF /* CreateAccountViewController.swift */,
+				2C724D8F1C53E93B00A53EAF /* JokesFeedTableViewController.swift */,
+				2C724D911C53E95600A53EAF /* AddJokeViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		2C724D841C53E84A00A53EAF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2C724D931C53E97800A53EAF /* JokeCellTableViewCell.swift */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -256,8 +320,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C724D941C53E97800A53EAF /* JokeCellTableViewCell.swift in Sources */,
+				2C724D8E1C53E92000A53EAF /* CreateAccountViewController.swift in Sources */,
+				2C724D8C1C53E90300A53EAF /* LoginViewController.swift in Sources */,
 				2C724D551C53E7EB00A53EAF /* ViewController.swift in Sources */,
+				2C724D8A1C53E8D900A53EAF /* Joke.swift in Sources */,
+				2C724D901C53E93B00A53EAF /* JokesFeedTableViewController.swift in Sources */,
 				2C724D531C53E7EB00A53EAF /* AppDelegate.swift in Sources */,
+				2C724D921C53E95600A53EAF /* AddJokeViewController.swift in Sources */,
+				2C724D861C53E87E00A53EAF /* Constants.swift in Sources */,
+				2C724D881C53E8B500A53EAF /* DataService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
