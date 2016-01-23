@@ -69,9 +69,5 @@ class JokesFeedTableViewController: UITableViewController {
             return JokeCellTableViewCell()
             
         }
-        
-        //        return tableView.dequeueReusableCellWithIdentifier("JokeCellTableViewCell") as! JokeCellTableViewCell
-        
     }
-    
 }

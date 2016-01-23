@@ -34,7 +34,7 @@ class JokeCellTableViewCell: UITableViewCell {
         voteRef = DataService.dataService.CURRENT_USER_REF.childByAppendingPath("votes").childByAppendingPath(joke.jokeKey)
         
         self.jokeText.text = joke.jokeText
-        self.totalVotesLabel.text = "\(joke.jokeVotes)"
+        self.totalVotesLabel.text = "Total Votes: \(joke.jokeVotes)"
         self.usernameLabel.text = joke.username
         
         voteRef.observeSingleEventOfType(.Value, withBlock: { snapshot in

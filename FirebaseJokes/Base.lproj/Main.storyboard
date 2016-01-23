@@ -159,6 +159,12 @@
                                         <constraint firstItem="UJV-uO-2Ob" firstAttribute="top" secondItem="3lI-0n-pnO" secondAttribute="bottom" constant="8" id="v1R-Vk-4vT"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="jokeText" destination="gE5-3n-H9E" id="T5T-Ky-Cn9"/>
+                                    <outlet property="thumbVoteImage" destination="UJV-uO-2Ob" id="17A-vm-mVl"/>
+                                    <outlet property="totalVotesLabel" destination="p13-Vh-8Ui" id="fes-zn-5Po"/>
+                                    <outlet property="usernameLabel" destination="3lI-0n-pnO" id="BtJ-rF-M5P"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>

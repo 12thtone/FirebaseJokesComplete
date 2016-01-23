@@ -46,9 +46,6 @@ class AddJokeViewController: UIViewController {
                 "author": currentUsername
             ]
             
-            //            let firebaseNewJoke = DataService.dataService.JOKE_REF.childByAutoId()
-            //            firebaseNewJoke.setValue(newJoke)
-            
             DataService.dataService.createNewJoke(newJoke)
             
             if let navController = self.navigationController {

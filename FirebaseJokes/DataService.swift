@@ -15,9 +15,6 @@ class DataService {
     private var _BASE_REF = Firebase(url: "\(BASE_URL)")
     private var _USER_REF = Firebase(url: "\(BASE_URL)/users")
     private var _JOKE_REF = Firebase(url: "\(BASE_URL)/jokes")
-    //    private var _VOTE_REF: Firebase!
-    //    private var _USERNAME_REF: Firebase!
-    
     
     var BASE_REF: Firebase {
         return _BASE_REF
@@ -38,11 +35,7 @@ class DataService {
     var JOKE_REF: Firebase {
         return _JOKE_REF
     }
-    /*
-    var VOTE_REF: Firebase {
-    return _VOTE_REF
-    }*/
-    
+        
     var USERNAME_REF: Firebase {
         let currentUser = Firebase(url: "\(BASE_REF)").childByAppendingPath("users").childByAppendingPath("username")
         
