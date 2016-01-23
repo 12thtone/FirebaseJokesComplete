@@ -7,13 +7,35 @@
 //
 
 import UIKit
+import Firebase
 
 class JokesFeedTableViewController: UITableViewController {
+    
+    var jokes = [Joke]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        DataService.dataService.JOKE_REF.observeEventType(.Value, withBlock: { snapshot in
+            print(snapshot.value)
+            
+            self.jokes = []
+            
+            if let snapshots = snapshot.children.allObjects as? [FDataSnapshot] {
+                
+                for snap in snapshots {
+                    
+                    if let postDictionary = snap.value as? Dictionary<String, AnyObject> {
+                        let key = snap.key
+                        let joke = Joke(key: key, dictionary: postDictionary)
+                        self.jokes.insert(joke, atIndex: 0)
+                    }
+                }
+                
+            }
+            
+            self.tableView.reloadData()
+        })
     }
     
     override func didReceiveMemoryWarning() {
@@ -28,13 +50,27 @@ class JokesFeedTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return 0
+        return jokes.count
     }
     
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        return tableView.dequeueReusableCellWithIdentifier("JokeCellTableViewCell") as! JokeCellTableViewCell
+        let joke = jokes[indexPath.row]
+        
+        if let cell = tableView.dequeueReusableCellWithIdentifier("JokeCellTableViewCell") as? JokeCellTableViewCell {
+            
+            cell.configureCell(joke)
+            
+            return cell
+            
+        } else {
+            
+            return JokeCellTableViewCell()
+            
+        }
+        
+        //        return tableView.dequeueReusableCellWithIdentifier("JokeCellTableViewCell") as! JokeCellTableViewCell
         
     }
     
