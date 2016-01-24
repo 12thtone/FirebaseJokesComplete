@@ -60,10 +60,5 @@ class DataService {
         // setValue() saves to Firebase.
         
         firebaseNewJoke.setValue(joke)
-        
-        // Save the current user as the Author of the Joke
-        let postId = firebaseNewJoke.key
-        let author = CURRENT_USER_REF.childByAppendingPath("jokes").childByAppendingPath(postId)
-        author.setValue(true)
     }
 }

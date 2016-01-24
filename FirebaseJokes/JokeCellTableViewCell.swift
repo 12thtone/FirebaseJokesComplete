@@ -78,7 +78,8 @@ class JokeCellTableViewCell: UITableViewCell {
                 
                 self.joke.addSubtractVote(true)
                 
-                // setValue saves the vote as true.
+                // setValue saves the vote as true for the current user.
+                // voteRef is a reference to the user's "votes" path.
                 
                 self.voteRef.setValue(true)
             } else {
