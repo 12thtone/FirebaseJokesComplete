@@ -11,6 +11,7 @@ import Firebase
 
 class Joke {
     private var _jokeRef: Firebase!
+    
     private var _jokeKey: String!
     private var _jokeText: String!
     private var _jokeVotes: Int!
@@ -32,13 +33,12 @@ class Joke {
         return _username
     }
     
-    init(joke: String, username: String) {
-        self._jokeText = joke
-        self._username = username
-    }
+    // Initialize the new Joke
     
     init(key: String, dictionary: Dictionary<String, AnyObject>) {
         self._jokeKey = key
+        
+        // Within the Joke, or Key, the following properties are children
         
         if let votes = dictionary["votes"] as? Int {
             self._jokeVotes = votes
@@ -54,8 +54,12 @@ class Joke {
             self._username = ""
         }
         
+        // The above properties are assigned to their key.
+        
         self._jokeRef = DataService.dataService.JOKE_REF.childByAppendingPath(self._jokeKey)
     }
+    
+    // Add or Subtract a Vote from the Joke.
     
     func addSubtractVote(addVote: Bool) {
         
@@ -64,6 +68,8 @@ class Joke {
         } else {
             _jokeVotes = _jokeVotes - 1
         }
+        
+        // Save the new vote total.
         
         _jokeRef.childByAppendingPath("votes").setValue(_jokeVotes)
         

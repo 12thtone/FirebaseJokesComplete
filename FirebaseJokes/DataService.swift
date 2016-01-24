@@ -43,16 +43,25 @@ class DataService {
     }
     
     func createNewAccount(uid: String, user: Dictionary<String, String>) {
+        
+        // A User is born.
+        
         USER_REF.childByAppendingPath(uid).setValue(user)
     }
     
     func createNewJoke(joke: Dictionary<String, AnyObject>) {
         
         // Save the Joke
+        // JOKE_REF is the parent of the new Joke: "jokes".
+        // childByAutoId() saves the joke and gives it its own ID.
+        
         let firebaseNewJoke = JOKE_REF.childByAutoId()
+        
+        // setValue() saves to Firebase.
+        
         firebaseNewJoke.setValue(joke)
         
-        // Save User as the Author of the Joke
+        // Save the current user as the Author of the Joke
         let postId = firebaseNewJoke.key
         let author = CURRENT_USER_REF.childByAppendingPath("jokes").childByAppendingPath(postId)
         author.setValue(true)
