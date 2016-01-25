@@ -54,7 +54,7 @@ class Joke {
             self._username = ""
         }
         
-        // The above properties are assigned to their parent key.
+        // The above properties are assigned to their key.
         
         self._jokeRef = DataService.dataService.JOKE_REF.childByAppendingPath(self._jokeKey)
     }
