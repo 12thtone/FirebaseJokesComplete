@@ -35,12 +35,6 @@ class DataService {
     var JOKE_REF: Firebase {
         return _JOKE_REF
     }
-        
-    var USERNAME_REF: Firebase {
-        let currentUser = Firebase(url: "\(BASE_REF)").childByAppendingPath("users").childByAppendingPath("username")
-        
-        return currentUser!
-    }
     
     func createNewAccount(uid: String, user: Dictionary<String, String>) {
         
